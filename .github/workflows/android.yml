@@ -12,10 +12,10 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '21'
-      - name: Build debug APK
-        run: ./gradlew assembleDebug
+      - name: Build debug APK (FDroid flavor)
+        run: ./gradlew assembleFDroidDebug
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: app-debug
-          path: '**/*-debug.apk'
+          path: '**/*fdroid*Debug*.apk'
